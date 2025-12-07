@@ -1,16 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="kevin.hero_manager.Controller1">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="381.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kevin.hero_manager.Controller1">
+   <children>
+      <ListView fx:id="list" layoutX="210.0" prefHeight="464.0" prefWidth="600.0" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-20.0" />
+      <HBox alignment="CENTER" layoutY="443.0" prefHeight="74.0" prefWidth="810.0" spacing="100.0" AnchorPane.bottomAnchor="-1.4000000000000057" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-0.39999999999997726">
+         <children>
+            <Button fx:id="add" mnemonicParsing="false" onAction="#switchToAddScene" text="New Hero" textAlignment="CENTER">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="edit" mnemonicParsing="false" onAction="#switchToUpdateScene" text="Edit Hero" textAlignment="CENTER">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="delete" mnemonicParsing="false" onAction="#deleteHero" text="Delete Hero" textAlignment="CENTER">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <Button fx:id="save" mnemonicParsing="false" onAction="#saveToCSV" text="Save to .CSV" textAlignment="CENTER">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Button>
+         </children>
+      </HBox>
+      <VBox layoutX="-1.6" layoutY="-0.8000000000000007" prefHeight="464.0" prefWidth="212.0" spacing="40.0" AnchorPane.bottomAnchor="73.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="-20.0">
+         <padding>
+            <Insets left="10.0" right="10.0" top="20.0" />
+         </padding>
+         <children>
+            <Label fx:id="name" alignment="CENTER" prefHeight="30.0" prefWidth="211.0" text="Hero" textAlignment="CENTER">
+               <font>
+                  <Font name="Verdana Bold" size="24.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="190.0">
+               <children>
+                  <Label text="Class:">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="hClass" text="None" textAlignment="CENTER">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="190.0">
+               <children>
+                  <Label text="Health Points:">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="hp" text="None" textAlignment="CENTER">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="200.0">
+               <children>
+                  <Label text="Special Ability:">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="sa" text="None" textAlignment="CENTER">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets top="20.0" />
+   </padding>
+</AnchorPane>
